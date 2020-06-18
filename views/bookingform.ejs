@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>
+        my page
+    </title>
+    <meta charset="UTF-8">
+  <meta name="description" content="africa travels">
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0">
+</head>
+<link rel="stylesheet" href="/style.css">
+<body>
+
+<nav class="nav">
+    
+        <div class="nav-icon center">
+            <div class="nav-icon1"></div>
+            <div class="nav-icon2"></div>
+            <div class="nav-icon2"></div>
+        </div>
+        <div class="nav-wrapper center" id="nav-wrapper">
+    
+<div class="nav-items  center"  id="nav-items">
+                <ul id="ull" class="ullist "><li><a href="/">Home</a></li><li><a href="/aboutus">about us</a></li><li><a href="/blog">blog</a></li><li>
+                   <% if(!user){%>
+                   <a href="/register">register</a></li><li><a href="/login">login</a></li></ul>
+                   <% }else{%>
+                   <a href="/logout">logout</a></li><li><a href="/profile">my profile</a></li></ul>
+                   <% }%>
+               </div>
+        </div>
+</nav>
+<header>
+    
+</header>
+
+<main  class="main ">
+   <div class=" logodiv center"> <img class="logo" src="/image/logo.JPG"></div>
+    <h2 class="center headtext"> lets take you to your dream destination, your satisfaction is our passion</h2>
+    <div class="destinations3  center">
+       
+        <div class="bookingdiv center">
+            <section class="center signuphead">
+            <h2>Travel to <%= post[0].country%></h2>
+                <p>travel and tour booking form</p>
+            </section>
+            <div class="logindiv ">
+            
+                <div class="loginform">
+                <form action="/book/<%= post[0].id%>" class="loginclass" method="POST">
+                    <label for="name">my name </label>
+                    <input type="text" name="name" value="<%= user.firstname %> <%= user.lastname %>" disabled>
+                    <p>select holiday duration</p>
+                   
+                    <input type="radio"name="travelduration" id="1-week" value="1-week" required>
+                    <label for="1-week">1 week</label>
+                    <input type="radio"name="travelduration" id="3-weeks" value="3-weeks" required>
+                    <label for="3-weeks">3 weeks</label>
+                    <input type="radio"name="travelduration" id="1-months" value="1-months" required>
+                    <label for="1-months">1 month</label>
+                    <p>select number of travelers</p>
+                    <input type="radio"name="numberoftravlers" id="1" value="1-person" required>
+                    <label for="1">1 person</label>
+                    <input type="radio"name="numberoftravlers" id="2" value="2-person" required>
+                    <label for="2">2 persons</label>  
+                    <input type="radio"name="numberoftravlers" id="3to5person" value="3-5persons" required>
+                    <label for="3to5person">3-5 persons <small> note:3-5 persons attract addictiona charges</small></label>
+                    <br/>
+                    
+                    <label for="description">description</label>
+                    <textarea  name="description" placeholder="description or any adddional message"></textarea>
+                    <small>by clicking submit ,you accept Afro travel terms and conditions as listed <a href="/aboutus">here</a></small>
+                   <button class="signinbtn btn" type="submit">submit bookings</button>
+                
+              
+            </form>
+            </div>
+    
+            </div> 
+
+    </form> 
+    </div>
+</div>
+  
+
+</main>
+<footer>
+    <p class="center">designed by martins chukwuma(talk2mat2@yahoo.com)</p>
+    <p class="center">all right reserved, 2020</p>
+</footer>
+<script type="text/javascript" src="/main.js"></script>
+</body>
+
+</html>

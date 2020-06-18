@@ -1,0 +1,117 @@
+<html>
+<head>
+    <title>
+        my page
+    </title>
+    <meta charset="UTF-8">
+  <meta name="description" content="africa travels">
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0">
+</head>
+<link rel="stylesheet" href="/style.css">
+<body>
+
+<nav class="nav">
+    
+        <div class="nav-icon center">
+            <div class="nav-icon1"></div>
+            <div class="nav-icon2"></div>
+            <div class="nav-icon2"></div>
+        </div>
+        <div class="nav-wrapper center" id="nav-wrapper">
+    
+            <div class="nav-items  center"  id="nav-items">
+                <ul id="ull" class="ullist "><li><a href="/">Home</a></li><li><a href="/aboutus">about us</a></li><li><a href="/blog">blog</a></li><li>
+                   <% if(!user){%>
+                   <a href="/register">register</a></li><li><a href="/login">login</a></li></ul>
+                   <% }else{%>
+                   <a href="/logout">logout</a></li><li><a href="/profile">my profile</a></li></ul>
+                   <% }%>
+               </div>
+        </div>
+</nav>
+<header>
+    
+</header>
+
+<main  class="main ">
+   <div class=" logodiv center"> <img class="logo" src="/image/logo.JPG"></div>
+    <h2 class="center headtext"> lets take you to your dream destination, your satisfaction is our passion</h2>
+    <div class="destinations3  center">
+       
+        <div class="blogdiv center">
+            <section class="center signuphead">
+            <h2>Our Blog</h2>
+                <p>blog posts</p>
+                <% if ( errorMessage.length > 0 ) { %>
+                    <h3 class="flashmessage center" style="color: rgb(245, 0, 49);"> <%= errorMessage %> </h3>
+                  <% } %>
+                  <% if ( successMessage.length > 0 ) { %>
+                    <h3 class="flashmessage center" style="color: rgb(116, 253, 116)"> <%= successMessage %> </h3>
+                  <% } %>
+            </section>
+            <ul>
+            <% for (var i=0;i<post.length;i++){%>
+                <li>
+                    <u><li><h2><%= post[i].topic %></h2></li></u>
+                    <li><p><%= post[i].message %></p></li>
+                    <li><small><%= post[i].names %></small></li>
+                <%}%>
+            </ul>
+
+
+            <h3>  comments  </h3>
+            <ul>
+                <% for (var i=0;i<post[0].comments.length;i++){%>
+                   
+                        <li><p><%= post[0].comments[i].comments %></p></li> 
+                        <small>comments by :<%= post[0].comments[i].postedby %></small>
+                    <%}%>
+                </ul>
+            <section style="display: flex;">
+                
+                  
+                        
+                <form action="<%`/blog/${post[0]._id}`%>" class="signupclass center" method="POST">
+                    <section style="display: flex;">
+                        <div class="loginform2">
+                        
+                        <label for="comments">reply to :<i style="  color: rgb(52, 34, 131);"><%= post[0].topic %></i></label>
+                        <textarea type="text"name="comments" placeholder="your-reply" rows="4" cols="50" required></textarea>
+                        <label for="user">your name</label>
+                        <%if (!user){%>
+                        <input type="text" name="user" placeholder="name" required value="Anonymouse">
+                            
+                        <%}else{%>
+                            <input type="text" name="user" placeholder="your name" required value="<%= user.firstname %>" readonly="readonly>
+                        <%}%>
+                           
+                    </div>
+                    
+                   
+            </section>
+        <section class="signupbottom  ">
+                <button class="signinbtn btn" type="submit">send</button>
+                    
+                <p>send message to Afro Travels ltd</p>
+            </section>
+            </form> 
+                        
+               
+             
+        
+    </section>
+
+    
+    </div>
+</div>
+  
+
+</main>
+<footer>
+    <p class="center">designed by martins chukwuma(talk2mat2@yahoo.com)</p>
+    <p class="center">all right reserved, 2020</p>
+</footer>
+<script type="text/javascript" src="/main.js"></script>
+</body>
+
+</html>

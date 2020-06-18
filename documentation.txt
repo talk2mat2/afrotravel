@@ -1,0 +1,5 @@
+afro travel admin can post country
+
+endpoint /country
+method p
+ost
