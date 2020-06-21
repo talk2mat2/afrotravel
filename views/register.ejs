@@ -24,11 +24,17 @@
     
             <div class="nav-items  center"  id="nav-items">
                 <ul id="ull" class="ullist "><li><a href="/">Home</a></li><li><a href="/aboutus">about us</a></li><li><a href="/blog">blog</a></li><li>
-                   <% if(!user){%>
-                   <a href="/register">register</a></li><li><a href="/login">login</a></li></ul>
+                    <a href="/contactus">Contact us</a></li>
+                    <% if(!user){%>
+                    <li><a href="/register">register</a></li><li><a href="/login">login</a></li>
+                   
                    <% }else{%>
-                   <a href="/logout">logout</a></li><li><a href="/profile">my profile</a></li></ul>
+                    <li> <a href="/logout">logout</a></li><li><a href="/profile">my profile</a></li>
+                <section2 class="center .userheader" style="color: rgb(52, 34, 131); text-transform:uppercase;">(welcome, <%=user.firstname%>)</section2>
+                
+                   
                    <% }%>
+                </ul>
                </div>
         </div>
 </nav>
@@ -41,19 +47,20 @@
     <h2 class="center headtext"> lets take you to your dream destination, your satisfaction is our passion</h2>
     <div class="destinations3  center">
        
-        <div class="logindiv2 center">
+        <div class="logindiv3 center">
             <section class="center signuphead">
             <h2>sign up</h2>
-                <p>create an account with us today</p>
-				  <% if ( errorMessage.length > 0 ) { %>
-    <h3 style="color: rgb(245, 0, 49);"> <%= errorMessage %> </h3>
-  <% } %>
-  <% if ( successMessage.length > 0 ) { %>
-    <h3 style="color: rgb(19, 241, 19)"> <%= successMessage %> </h3>
-  <% } %>
-				
+            <% if ( errorMessage.length > 0 ) { %>
+                <h3 class="flashmessage " style="color: rgb(245, 0, 49);"> <%= errorMessage %> </h3>
+              <% } %>
+              <% if ( successMessage.length > 0 ) { %>
+                <h3 style="color: rgb(19, 241, 19)"> <%= successMessage %> </h3>
+              <% } %>
+                        
+                <h1 style="font-size: 1.4rem; font-family: Arial, Helvetica, sans-serif;">create an account with Afro Travels</p>
+		
             </section>
-            <form action="/register" class="signupclass center" method="POST">
+            <form action="/register" class="signupclass2 center" method="POST">
             <section style="display: flex;">
                 <div class="loginform2">
                 <label for="firstname">First name</label>
@@ -82,7 +89,7 @@
 <section class="signupbottom  ">
         <button class="signinbtn btn" type="submit">continue</button>
             
-        <p>already have an account? login</p>
+        <p>already have an account? <a href="/login">login</a></p>
     </section>
     </form> 
     </div>

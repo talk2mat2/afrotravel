@@ -19,13 +19,19 @@
         </div>
         <div class="nav-wrapper center" id="nav-wrapper">
     
-            <div class="nav-items  center"  id="nav-items">
+            <div class="nav-items  "  id="nav-items">
                 <ul id="ull" class="ullist "><li><a href="/">Home</a></li><li><a href="/aboutus">about us</a></li><li><a href="/blog">blog</a></li><li>
-                   <% if(!user){%>
-                   <a href="/register">register</a></li><li><a href="/login">login</a></li></ul>
+                    <a href="/contactus">Contact us</a></li>
+                    <% if(!user){%>
+                    <li><a href="/register">register</a></li><li><a href="/login">login</a></li>
+                   
                    <% }else{%>
-                   <a href="/logout">logout</a></li><li><a href="/profile">my profile</a></li></ul>
+                    <li> <a href="/logout">logout</a></li><li><a href="/profile">my profile</a></li>
+                <section2 class="center .userheader" style="color: rgb(52, 34, 131); text-transform:uppercase;">(welcome, <%=user.firstname%>)</section2>
+                
+                   
                    <% }%>
+                </ul>
                </div>
         </div>
 </nav>

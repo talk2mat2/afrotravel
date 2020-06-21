@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>
-        my page
+        afrotravel- blog
     </title>
     <meta charset="UTF-8">
   <meta name="description" content="africa travels">
@@ -21,11 +21,17 @@
     
             <div class="nav-items  center"  id="nav-items">
                 <ul id="ull" class="ullist "><li><a href="/">Home</a></li><li><a href="/aboutus">about us</a></li><li><a href="/blog">blog</a></li><li>
-                   <% if(!user){%>
-                   <a href="/register">register</a></li><li><a href="/login">login</a></li></ul>
+                    <a href="/contactus">Contact us</a></li>
+                    <% if(!user){%>
+                    <li><a href="/register">register</a></li><li><a href="/login">login</a></li>
+                   
                    <% }else{%>
-                   <a href="/logout">logout</a></li><li><a href="/profile">my profile</a></li></ul>
+                    <li> <a href="/logout">logout</a></li><li><a href="/profile">my profile</a></li>
+                <section2 class="center .userheader" style="color: rgb(52, 34, 131); text-transform:uppercase;">(welcome, <%=user.firstname%>)</section2>
+                
+                   
                    <% }%>
+                </ul>
                </div>
         </div>
 </nav>
@@ -36,22 +42,31 @@
 <main  class="main ">
    <div class=" logodiv center"> <img class="logo" src="/image/logo.JPG"></div>
     <h2 class="center headtext"> lets take you to your dream destination, your satisfaction is our passion</h2>
-    <div class="destinations3  center">
+    <div class="destinations3  center" >
        
-        <div class="blogdiv center">
+        <div class="blogdiv center4">
             <section class="center signuphead">
-            <h2>Our Blog</h2>
-                <p>blog posts</p>
+            <h2 style="font-size: 25px;" class="headtopic">Our Blog</h2>
+                
+               
+               
+                
             </section>
+            <p class="blogposts">Blog Posts List</p>
+           <a href="/blog/newpost"> <p class="createtopic"> Create New Topic </p></a>
+             <div class="center " style="position:absolute;top:3.4rem;  width: 100%; background-color:rgb(253, 247, 247); height: 2px;"></div>
             
-            <section style="display: flex;">
+            <section class="postdivs" style="display: flex; ">
                 <ul>
                     <% for (var i=0;i<post.length;i++){%>
                         
                         
-                    <li><h2><a href="/blog/<%= post[i].id %>"><%= post[i].topic %></a></h2></li>
-                        <small><%= post[i].comments.length %> comments</small>
-                    <%}%>
+                        <a href="/blog/<%= post[i].id %>"><li><h1 style=" color: rgb(52, 34, 131);"><%= post[i].topic %></h1></li></a>
+                        <% if( post[i].comments.length > 1){%>
+                            <small style=" color: rgb(52, 34, 131);"><%= post[i].comments.length %> comments</small> 
+                           <% }else{%>
+                            <small style=" color: rgb(52, 34, 131);"><%= post[i].comments.length %> comment</small>
+                    <%}}%>
                 </ul>
              
         

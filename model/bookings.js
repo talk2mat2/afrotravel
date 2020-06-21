@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 // const shortid = require('shortid');
 
 const bookingSchema = new Schema({
-    country:{type:String, required:true},
-    bookedby:{type:String, required:true},
+    destination:{type:String, required:true},
+    email:{type:String, required:true},
 bookedbyname:{type:String, required:true},
     travelduration:{type:String, required:true},
     numberoftravlers: {
@@ -12,6 +12,7 @@ bookedbyname:{type:String, required:true},
        required:true
       },
     bookingdate:{type:Date,default:Date.now},
+    phoneno:{type:String},
     description:{type:String},
     randomtoken: {
         type: String,required:true,unique:true
@@ -20,4 +21,4 @@ bookedbyname:{type:String, required:true},
 })
 
 
-module.exports= mongoose.model('bookings',bookingSchema);
+module.exports= mongoose.model('travelbookings',bookingSchema);

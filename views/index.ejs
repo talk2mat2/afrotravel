@@ -19,14 +19,20 @@
         </div>
         <div class="nav-wrapper center" id="nav-wrapper">
     
-    <div class="nav-items  center"  id="nav-items">
-     <ul id="ull" class="ullist "><li><a href="/">Home</a></li><li><a href="/aboutus">about us</a></li><li><a href="/blog">blog</a></li><li>
-        <% if(!user){%>
-        <a href="/register">register</a></li><li><a href="/login">login</a></li></ul>
-        <% }else{%>
-        <a href="/logout">logout</a></li><li><a href="/profile">my profile</a></li></ul>
-        <% }%>
-    </div>
+            <div class="nav-items  center"  id="nav-items">
+                <ul id="ull" class="ullist "><li><a href="/">Home</a></li><li><a href="/aboutus">about us</a></li><li><a href="/blog">blog</a></li><li>
+                    <a href="/contactus">Contact us</a></li>
+                    <% if(!user){%>
+                    <li><a href="/register">register</a></li><li><a href="/login">login</a></li>
+                   
+                   <% }else{%>
+                    <li> <a href="/logout">logout</a></li><li><a href="/profile">my profile</a></li>
+                <section2 class="center .userheader" style=" text-transform:uppercase;">(welcome, <%=user.firstname%>)</section2>
+                
+                   
+                   <% }%>
+                </ul>
+               </div>
         </div>
 </nav>
 <header>
@@ -36,7 +42,16 @@
 <main  class="main ">
    <div class=" logodiv center"> <img class="logo" src="/image/logo.JPG"></div>
     <h2 class="center headtext"> lets take you to your dream destination, your satisfaction is our passion</h2>
+   <div class="center"> <% if ( errorMessage.length > 0 ) { %>
+        <h3 class="flashmessage center" style=" color: rgb(231, 33, 73);"> <%= errorMessage %> </h3>
+      <% } %>
+      <% if ( successMessage.length > 0 ) { %>
+        <h3 class="flashmessage center" style="color: rgb(116, 253, 116)"> <%= successMessage %> </h3>
+      <% } %>
+      </div>
+    
     <div class="destinations center">
+        
         <% if (countrylist.length>=1){%>
             <% for(var i=0;i<countrylist.length;i++){%>
                
@@ -47,7 +62,7 @@
             </div>
             <p class="texthead center">travel to <%= countrylist[i].country %></p>
             
-            <div class="textfoot center"><p class="price">=N=<%= countrylist[i].price %></p>
+            <div class="textfoot center"><p class="price">=N=<%= countrylist[i].price %>,000</p>
                 <a href="/book/<%=countrylist[i].id%>"><button class="button" type="button">book</button></a>
             </div>
             </div>

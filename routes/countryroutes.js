@@ -1,7 +1,7 @@
 const express = require('express');
 const router= express.Router()
 const fs = require('fs');
-const {getcountry,getaboutpage,getcountrydetail,getbookingform,postbookingform}= require('../controller/countrycontroll')
+const {getcountry,getaboutpage,getcountrydetail,getbookingform,postbookingform,getcontactusform}= require('../controller/countrycontroll')
 const multer =  require('multer')
 const path = require('path')
 const countryschema = require('../model/country')
@@ -13,6 +13,7 @@ router.get('/aboutus',getaboutpage)
 router.get('/country/:id',getcountrydetail)
 router.get('/book/:id',getbookingform)
 router.post('/book/:id',postbookingform)
+router.get('/contactus',getcontactusform)
 
 
 const storage = multer.diskStorage({

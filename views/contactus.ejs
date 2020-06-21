@@ -1,13 +1,13 @@
 <html>
 <head>
     <title>
-        afrotravel--- blog create post
+        my page
     </title>
     <meta charset="UTF-8">
   <meta name="description" content="africa travels">
     <meta name="viewport" content="width=device-width, initial-scale= 1.0">
 </head>
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="style.css">
 <body>
 
 <nav class="nav">
@@ -27,7 +27,7 @@
                    
                    <% }else{%>
                     <li> <a href="/logout">logout</a></li><li><a href="/profile">my profile</a></li>
-                <section2 class="center .userheader" style="color: rgb(52, 34, 131); text-transform:uppercase;">(welcome, <%=user.firstname%>)</section2>
+                <section2 class="center .userheader" style="text-transform:uppercase;">(welcome, <%=user.firstname%>)</section2>
                 
                    
                    <% }%>
@@ -44,24 +44,29 @@
     <h2 class="center headtext"> lets take you to your dream destination, your satisfaction is our passion</h2>
     <div class="destinations3  center">
        
-        <div class="blogdiv center">
+        <div class="contactusdiv center">
             <section class="center signuphead">
-            <h2 class="headtopic">Our Blog- start topic</h2>
-                <p>blog posts</p>
-               
+            <h1 class="headtopic">Contact Afro Travels</h1>
+                <p style=" color: rgb(52, 34, 131);">we are here to help and answer any question you might have., 
+                     
+                </p>
+                <p style=" color: rgb(52, 34, 131);" >Our team is ready to answer all your questions</p>
             </section>
 
-
-            <form action="/blog" class="signupclass center4" method="POST">
-                <section style="display: flex;">
-                    <div class="loginform2">
-                    <label for="topic">topic</label>
-                    <input style="background-color:rgb(52, 34, 131); color: blanchedalmond;"  type="text"name="topic" placeholder="topic" required>
-                    <label  for="message">your message</label>
-                    <textarea style="background-color:rgb(52, 34, 131); color: blanchedalmond;"  type="text"name="message" placeholder="your-message" rows="4" cols="50" required></textarea>
+            
+            <form action="/blog" class="signupclass center" method="POST">
+                <section >
+                    <div class="loginform2 ">
+                    <label for="topic">issue</label>
+                    <input style="background-color:rgb(52, 34, 131); color: blanchedalmond;" type="text"name="issue" placeholder="your issue" required>
+                    <label for="message">your message</label>
+                    <textarea style="background-color:rgb(52, 34, 131); color: blanchedalmond;" type="text"name="message" placeholder="your-message" rows="5" cols="80" required></textarea>
                     <label for="names">your name</label>
-                    <input style="background-color:rgb(52, 34, 131); color: blanchedalmond;"  type="text" name="names" value="<%= user.firstname%>" required readonly>
-                    
+                    <% if(user){%>
+                    <input style="background-color:rgb(52, 34, 131); color: blanchedalmond;" type="text" name="names" value="<%= user.firstname%>" required readonly>
+                    <% }else{%>
+                         <input style="background-color:rgb(52, 34, 131); color: blanchedalmond;" type="text" name="names" value="Anonymouse" required >
+                    <% }%>
                        
                 </div>
                 
@@ -72,17 +77,17 @@
                 
             
         </section>
-        </form>  
+        </form> 
     </div>
 </div>
   
 
 </main>
 <footer>
-    <p class="center">designed  and programmed by martins chukwuma(talk2mat2@yahoo.com)</p>
+    <p class="center">designed by martins chukwuma(talk2mat2@yahoo.com)</p>
     <p class="center">all right reserved, 2020</p>
 </footer>
-<script type="text/javascript" src="/main.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>

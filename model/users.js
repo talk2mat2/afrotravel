@@ -13,7 +13,7 @@ const userSchema = new Schema({
     location:{type:String},
     profilepicture:{type:String,default:"/image/uploads/profilepics/avatar.jpg"},
     aboutme:{type:String},
-    bookinghistory:[{type:Schema.Types.ObjectId, ref: 'country' }],
+    bookinghistory:[{type:Object}],
     admin_status:{type:Boolean,default:false}
 });
 

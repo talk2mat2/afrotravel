@@ -42,7 +42,10 @@ res.status(200).render('postdetail',{user:req.user,post:success,commentsdata:com
 }
 
 exports.getnewpost= async function(req,res){
+    if(req.user){
     res.status(200).render('newpost',{user:req.user,successMessage:req.flash('successMessage') }) 
+}else{req.flash('errorMessage','you need login to create new blog topic')
+res.redirect('/login')}
 }
 
 

@@ -46,23 +46,29 @@
        
         <div class="bookingdiv center">
             <section class="center signuphead">
-            <h1>Explore <%= post[0].country %> </h1>
-            <img class="countrydetails" src="<%= post[0].images %>" alt="image">
-                
-            </section>
-            <form action="#" class="detailtext center" method="POST">
-                <p>trip price =N=<%=post[0].price %>k</p>
-                <ul><li>all expenses covered</li>
-                    <li>maximum fun</li></ul>
-                    <li>beach parties</li></ul>
-                    <li>lodgning and accomodation</li>
-                    <li>6 star hotel accomodation</li>
-                </ul>
-                   <a href="/book/<%=post[0].id%>"> <button type="button" class="btn"> book <%= post[0].country %> </button></a>
-            <section style="display: flex;">
+            <h2 class="headtopic">Travel to <%= country%></h2>
               
-        
-    </section>
+
+                
+                   
+               
+            </section>
+            <div class="center" style="flex-direction: column; margin-top: 5.5rem;">
+            
+                <img class="successimage " src="/image/success.png">
+               
+               <p style="color: rgb(52, 34, 131);" >Hurray!, you have successfully booked travel apointment to <%= country%></p>
+               <p style="color: rgb(52, 34, 131);" >your generated booking code is <h2 style="color: red;"><%=randomtoken%> </h2></p>
+               <p style="color: rgb(52, 34, 131);" >write it down as you will need it</p>
+               <p style="color: rgb(52, 34, 131);" >you will receive an email shortly and a call from our customer service to confirm your order</p>
+               <p style="color: rgb(52, 34, 131);" >proceed to the bank and pay the amount =N= <%= price%>,000 </p>
+               <p style="color: rgb(52, 34, 131);" > to the account no 00000000000, accout name :Afro travels ng ltd, Bank name :GTB</p>
+               <p style="color: rgb(52, 34, 131);" >depositors name should be the generated booking code </p>
+               
+               <p style="color: rgb(52, 34, 131);">after payment is confirmed our customer services will <br/> get also back to you
+                 usually in 2 working days</p>
+    
+            </div> 
 
     </form> 
     </div>
@@ -71,7 +77,7 @@
 
 </main>
 <footer>
-    <p class="center">designed & programmed by martins chukwuma(talk2mat2@yahoo.com)</p>
+    <p class="center">designed by martins chukwuma(talk2mat2@yahoo.com)</p>
     <p class="center">all right reserved, 2020</p>
 </footer>
 <script type="text/javascript" src="/main.js"></script>

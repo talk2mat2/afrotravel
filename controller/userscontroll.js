@@ -69,9 +69,22 @@ exports.registerUser= async function(req,res){
    else{ 
        const harshpassword=await bcrypt.hash(password,10)
        const newUser = new Users({email,password:harshpassword,firstname,lastname,sex})
-await newUser.save().then(success=>{
-    req.flash('successMessage','account created successfully');
-    res.status(501).redirect('/login')
+await newUser.save().then((success)=>{
+req.login(newUser,function(err){
+    if(err){
+        console.log(err)
+    }
+    else{
+        req.flash('successMessage','account created successfully');
+        req.flash('successMessage','a mail has been sent to you')
+        req.flash('successMessage',`---you are logged in as ${firstname}`)
+    res.status(501).redirect('/')
+    }
+})
+
+  
+
+    
    
 })}
     
@@ -85,10 +98,11 @@ exports.getmyprofile= async function(req,res){
     
 if (req.user){
     await Users.findOne({_id:req.user.id}).then((success)=>{
+       
         res.render('profile',{user:success,errorMessage:req.flash('errorMessage'),successMessage:req.flash('successMessage')})
      
      
-     }
+     } 
      
      )
 }
