@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {getregisterform,getloginform,registerUser,loginuser,getmyprofile,geteditmyprofile}= require('../controller/userscontroll')
+const {redirectuser,getregisterform,getloginform,registerUser,loginuser,getmyprofile,geteditmyprofile}= require('../controller/userscontroll')
 const multer =  require('multer')
 const path = require('path')
 const User= require('../model/users')
@@ -37,7 +37,7 @@ router.get('/login',getloginform)
 router.post('/register',registerUser)
 
 router.post('/login',
-  loginuser);
+  loginuser,redirectuser);
 router.get('/profile',getmyprofile)  
 router.get('/logout', function(req, res){
     req.logout();

@@ -46,38 +46,46 @@
        
         <div class="bookingdiv center">
             <section class="center signuphead">
-            <h2>Travel to <%= post[0].country%></h2>
-                <p>travel and tour booking form</p>
+            <h2 class="headtopic">Travel to <%= post[0].country%></h2>
+                <p class="headtopic">travel and tour booking form</p>
             </section>
             <div class="center travelbook ">
             
-                <div class="loginform">
+                <div class="loginform center ">
                 <form action="/book/<%= post[0].id%>" class="loginclass" method="POST">
-                    <label for="name">my name </label>
-                    <input type="text" name="name" value="<%= user.firstname %> <%= user.lastname %>" disabled>
-                    <p>select holiday duration</p>
+                    <label style="color: grey; font-size:13px; background-color: white;" for="name">you are applying as :</label>
+                    <input  style="border-radius: 8.2px; text-align: center; background-color: white; font-size: smaller;" type="text" name="name" value="<%= user.firstname %> <%= user.lastname %>" disabled>
+                    <h2 style="text-transform: capitalize; color: white; background-color: blue ;border-radius: 3px;">select holiday duration</h2>
                    
+                   <div class="radiobtn1 center ">
                     <input type="radio"name="travelduration" id="1-week" value="1-week" required>
-                    <label for="1-week">1 week</label>
+                    <label style="color: grey;font-size: 14px;"for="1-week">1 week</label>
                     <input type="radio"name="travelduration" id="3-weeks" value="3-weeks" required>
-                    <label for="3-weeks">3 weeks</label>
+                    <label style="color: grey; font-size: 14px;"for="3-weeks">3 weeks</label>
                     <input type="radio"name="travelduration" id="1-months" value="1-months" required>
-                    <label for="1-months">1 month</label>
-                    <p>select number of travelers</p>
-                    <input type="radio"name="numberoftravlers" id="1" value="1-person" required>
-                    <label for="1">1 person</label>
-                    <input type="radio"name="numberoftravlers" id="2" value="2-person" required>
-                    <label for="2">2 persons</label>  
-                    <input type="radio"name="numberoftravlers" id="3to5person" value="3-5persons" required>
-                    <label for="3to5person">3-5 persons <small> note:3-5 persons attract addictiona charges</small></label>
+                    <label style="color: grey; font-size: 14px;"for="1-months">1 month</label>
+                   </div>
+                    <h2 style="text-transform: capitalize; color: white; background-color: blue;border-radius: 3px;">select number of travelers</h2>
+         <div class="radiobtn2 center">
+            <input type="radio"name="numberoftravlers" id="1" value="1-person" required>
+            <label  style="color: grey; font-size: 14px;" for="1">1 person</label>
+            <input  type="radio"name="numberoftravlers" id="2" value="2-person" required>
+            <label  style="color: grey; font-size: 14px;" for="2">2 persons</label>  
+            <input type="radio"name="numberoftravlers" id="3to5person" value="3-5persons" required>
+            <label  style="color: grey; font-size: 14px;" for="3to5person">3-5 persons </label>
+         </div>
                     <br/>
-                    
-                    <label for="description">description</label>
-                    <textarea  name="description" placeholder="description or any adddional message"></textarea>
-                    <small>by clicking submit ,you accept Afro travel terms and conditions as listed <a href="/aboutus">here</a></small>
-                   <button class="signinbtn btn" type="submit">submit bookings</button>
+                    <small  style="color: grey; font-size: 12px; text-transform: capitalize;"> Note:3-5 persons attract addictiona charges</small>
+                  <div class="describtion 
+                   ">
+                        
+                    <label  style="color: grey; font-size: 14px;" for="description">Description:</label>
+                    <textarea  name="description" placeholder=""></textarea>
+                    <small  style="color: grey; font-size: 12px; text-transform: capitalize;">by clicking submit ,you accept Afro travel terms and conditions as listed <a style="color: blue; font-size: 12px;" href="/aboutus">here</a></small>
+                  
+                  </div>
                 
-              
+                  <button style=" background-color: blue;" class="signinbtn btn" type="submit">submit bookings</button>
             </form>
             </div>
     
@@ -90,7 +98,7 @@
 
 </main>
 <footer>
-    <p class="center">designed by martins chukwuma(talk2mat2@yahoo.com)</p>
+    <p class="center">designed & programmed by martins chukwuma(talk2mat2@yahoo.com)</p>
     <p class="center">all right reserved, 2020</p>
 </footer>
 <script type="text/javascript" src="/main.js"></script>

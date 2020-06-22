@@ -26,9 +26,17 @@ exports.getregisterform= function(req,res){
     res.redirect('/')}
 }
 
-exports.loginuser= passport.authenticate('local', { successRedirect: '/',
+exports.loginuser= passport.authenticate('local', { 
 failureRedirect: '/login',
 failureFlash: true })
+exports.redirectuser= function(req,res){
+
+     req.flash('successMessage',`welcome back ${req.user.firstname}`)
+    res.redirect('/')
+    // req.flash(`successMessage','welcome boss, ${req.user.firstname}`)
+    
+    // res.redirect('/')
+}
 
 
 

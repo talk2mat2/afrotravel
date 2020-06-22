@@ -44,37 +44,41 @@
     <h2 class="center headtext"> lets take you to your dream destination, your satisfaction is our passion</h2>
     <div class="destinations3  center">
       
-        <div class="profilediv center">
+        <div class="profilediv center4 ">
             <% if ( errorMessage.length > 0 ) { %>
                 <h3 class="flashmessage" style="color: rgb(245, 0, 49);"> <%= errorMessage %> </h3>
               <% } %>
               <% if ( successMessage.length > 0 ) { %>
                 <h3 class="flashmessage" style="color: rgb(19, 241, 19)"> <%= successMessage %> </h3>
               <% } %>
-            <section class="center signuphead">
-            <h2>My Dashboard</h2>
+            <section class="signuphead center">
+            <h2>My dasboard</h2>
             <img class="profilepics" src="<%=user.profilepicture%>" alt="profile pics">
                 <h3><%=user.firstname%> <%=user.lastname%></h3>
-                <div class="loginform">
-                    <form action="#" class="loginclass" method="POST">
+              
+            </section>
+            <section class="profileform">
+            <form action="#" class="center2" method="POST">
+                <div class="loginform center ">
+                    <form action="#" class="loginclass" id="loginclass" method="POST">
                         <label for="firstname">firstname</label>
-                        <input type="text"name="firstname" value="<%=user.firstname%>" disabled>
+                        <input   id="profileelement" type="text"name="firstname" value="<%=user.firstname%>" disabled>
                         <label for="lastname">lastname</label>
-                        <input type="text"name="lastname" value="<%=user.lastname%> " disabled>
+                        <input   id="profileelement" type="text"name="lastname" value="<%=user.lastname%> " disabled>
                         <label for="email">Email</label>
-                        <input type="text"name="email" value="<%=user.email%> " disabled>
+                        <input  id="profileelement"  type="text"name="email" value="<%=user.email%> " disabled>
                         <label for="sex">sex</label>
-                        <input type="text" name="sex" value="<%=user.sex%>" disabled>
+                        <input   id="profileelement" type="text" name="sex" value="<%=user.sex%>" disabled>
                         <label for="location">location</label>
-                        <input type="text" name="location" value="<%=user.location%>" disabled>
+                        <input  id="profileelement"  type="text" name="location" value="<%=user.location%>" disabled>
                         <label for="aboutme">aboutme</label>
-                        <textarea type="text" name="aboutme" rows="4" cols="45" disabled><%=user.aboutme%></textarea>
+                        <textarea   id="profileelement" type="text" name="aboutme" rows="4" cols="45" disabled><%=user.aboutme%></textarea>
                         <label for="phoneno">phone no.</label>
-                        <input type="text" name="phoneno" value="<%=user.phoneno%>" disabled>
+                        <input  id="profileelement"  type="text" name="phoneno" value="<%=user.phoneno%>" disabled>
                         <label for="bookinghistory">travel bookings:</label>
                    <% for (var i= 0;i<user.bookinghistory.length;i++){%>
-                        <input type="text" name="bookinghistory" value="<%=user.bookinghistory[i].country%>" disabled>
-						<input type="text" name="bookinghistory" value="<%=user.bookinghistory[i].booking_id%>" disabled>
+                        <input  id="profileelement" style="font-size: smaller;" type="text" name="bookinghistory" value="<%=user.bookinghistory[i].country%> ,ref=<%=user.bookinghistory[i].booking_id%> " disabled>
+
                         <%}%>
                        
                     
@@ -83,14 +87,9 @@
                   <button class="signupbtn btn" type="button">edit my profile</button></a>
                 </form>
                 </div>
-            </section>
-            <form action="#" class="signupclass center" method="POST">
-            <section style="display: flex;">
-              
-        
-    </section>
 
     </form> 
+</section>
     </div>
 </div>
   

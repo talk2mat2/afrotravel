@@ -46,7 +46,7 @@
        
         <div class="blogdiv center4">
             <section class="center signuphead">
-            <h2 style="font-size: 25px;" class="headtopic">Afro Travel Blog---- <%= post[0].topic.substring(0,20) %></h2>
+            <h2 style="font-size: 15px;" class="headtopic">Afro Travel Blog---- <%= post[0].topic.substring(0,20) %></h2>
                 
                
                
@@ -68,7 +68,7 @@
                     <% for (var i=0;i<post.length;i++){%>
                         
                         
-                    <a href="/blog/<%= post[i].id %>"></a><h1 class="headtopic center" ><%= post[i].topic %><small style=" color: white">&nbsp;    &nbsp;   ---(Started by <%= post[i].names %>)</small></h1></a>
+                    <a href="/blog/<%= post[i].id %>"><h1 class="headtopic  center" style="font-size:14px"><%= post[i].topic %><small style=" color: white">&nbsp;    &nbsp;   ---(Started by <%= post[i].names %>)</small></h1></a>
                     <p style=" color: rgb(52, 34, 131);"><%= post[i].message %></p>
                         <% if( post[i].comments.length > 1){%>
                             <!-- <small style=" color: rgb(52, 34, 131);"><%= post[i].comments.length %> comments</small>  -->
@@ -83,8 +83,8 @@
             <div>
                 
                     <% for (var i=0;i<post[0].comments.length;i++){%>
-                        <small class="headtopic" style="color: white;"><%= post[0].comments[i].postedby %> said--</small>
-                            <p style="padding-left: 1rem; color: rgb(52, 34, 131);"><%= post[0].comments[i].comments %></p> 
+                        <small class="headtopic" style="color: white;font-size: 0.9em;"><%= post[0].comments[i].postedby %> said--</small>
+                            <p style="padding: 0.5rem; color: rgb(52, 34, 131);font-size: 0.79em;"><%= post[0].comments[i].comments %></p> 
                             
                             <div style="width:100%; height: 1px; background: rgba(68, 67, 64, 0.5);"></div>
                         <%}%>
@@ -93,27 +93,30 @@
             </div>
         </section>
         <section class="blogreply center4">
-            <form action="<%`/blog/${post[0]._id}`%>" class="signupclass3 center3 " method="POST">
-        
-                <section>
-                    <div class="loginform4">
+         <form action="<%`/blog/${post[0]._id}`%>" class="signupclass center " method="POST">
+          
+                
+                    <div class="loginform4 center ">
               
                       <label for="comments">reply to :<i style="  color: rgb(52, 34, 131);"><%= post[0].topic.substring(0,20) %></i></label>
-                      <textarea style="background-color:rgb(52, 34, 131); color: blanchedalmond;" type="text"name="comments" rows="4" cols="50" required></textarea>
+                      <textarea style="background-color:rgb(10, 218, 207);  color: rgb(52, 34, 131); " type="text"name="comments" rows="10" cols="50" required></textarea>
                       <label for="user">your name</label>
                       <%if (!user){%>
-                          <input  style="background-color:rgb(52, 34, 131); color: blanchedalmond;" type="text" name="user" placeholder="name" required value="Anonymouse">
+                          <input  style=" color: rgb(52, 34, 131); background-color:rgb(10, 218, 207);  " type="text" name="user" placeholder="name" required value="Anonymouse">
                           <%}else{%> 
-                              <input   style="background-color:rgb(52, 34, 131); color: blanchedalmond;" type="text" name="user" required value="<%= user.firstname %>" readonly="readonly">
+                              <input   style=" color: rgb(52, 34, 131); background-color:rgb(10, 218, 207);  " type="text" name="user" required value="<%= user.firstname %>" readonly="readonly">
                               <%}%>
               
                     </div>
-                </section>
+              
                 <section class=" ">
                   <button  class="signinbtn btn2" type="submit">send</button>
                       
               </section> 
                       </form>
+
+
+                    
           
                     </section>
 
@@ -131,7 +134,7 @@
 
 </main>
 <footer>
-    <p class="center">designed by martins chukwuma(talk2mat2@yahoo.com)</p>
+    <p class="center">designed % programmed by martins chukwuma(talk2mat2@yahoo.com)</p>
     <p class="center">all right reserved, 2020</p>
 </footer>
 <script type="text/javascript" src="/main.js"></script>

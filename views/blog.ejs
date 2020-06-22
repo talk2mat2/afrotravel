@@ -46,7 +46,7 @@
        
         <div class="blogdiv center4">
             <section class="center signuphead">
-            <h2 style="font-size: 25px;" class="headtopic">Our Blog</h2>
+            <h2 style="font-size: 17px;" class="headtopic">Our Blog</h2>
                 
                
                
@@ -56,12 +56,14 @@
            <a href="/blog/newpost"> <p class="createtopic"> Create New Topic </p></a>
              <div class="center " style="position:absolute;top:3.4rem;  width: 100%; background-color:rgb(253, 247, 247); height: 2px;"></div>
             
-            <section class="postdivs" style="display: flex; ">
+            <section class="postdivs" ">
+               
+
                 <ul>
                     <% for (var i=0;i<post.length;i++){%>
                         
                         
-                        <a href="/blog/<%= post[i].id %>"><li><h1 style=" color: rgb(52, 34, 131);"><%= post[i].topic %></h1></li></a>
+                        <a href="/blog/<%= post[i].id %>"><li><h1 style=" font-size: 0.77em; color: rgb(52, 34, 131);"><%= post[i].topic %></h1></li></a>
                         <% if( post[i].comments.length > 1){%>
                             <small style=" color: rgb(52, 34, 131);"><%= post[i].comments.length %> comments</small> 
                            <% }else{%>

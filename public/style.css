@@ -1,10 +1,13 @@
 *{
     font-family: Lato,Noto,sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     color:white;
     
    
     
+}
+.postdivs ul{
+    padding: 0.6rem;
 }
 button,input,textarea{
     color: rgb(2, 2, 2);
@@ -46,10 +49,18 @@ padding: 0;
     box-shadow: 0 0.3rem 0.4rem black;
     
 }
+.profileform{
+    margin-top:11rem;
+    font-size:2rem;
+}
+.formsdiv{
+    display:flex;
+    flex-direction:column;
+}
 
 .signupclass{
-position: absolute;
-top:3rem;
+
+
 
 
 
@@ -60,7 +71,19 @@ flex-direction: column;
     
     
 }
-
+.profilehead{
+    
+   
+    
+    
+    
+    
+    flex-direction: column;
+      
+       
+        
+        
+    }
 
 
 
@@ -96,8 +119,8 @@ width:11rem;
 .signupclass input,.signupclass button,.signupclass textarea{
   
     
-   min-width: 25rem;
-   
+   min-width: 20rem;
+   font-size: 14px;
     
         
     }
@@ -133,7 +156,9 @@ display:none;
     box-shadow: 0 0.2rem 0.4rem black;
     border-radius: 4px;
     min-height: 1.5rem;
-    max-width:20rem
+    max-width:20rem;
+    z-index:2;
+    position:absolute;
     
 }
 
@@ -163,6 +188,12 @@ z-index: 3;
      top: 0.3rem;
    
      
+}
+.leftright{
+
+    flex-direction: column;
+
+
 }
 .signupbottom{
     flex-direction: column;
@@ -221,7 +252,11 @@ z-index: 3;
     
 }
 
-
+.describtion {
+    display:flex;
+    flex-direction:column;
+ 
+}
 
 
 .blogdiv, .profilediv,.aboutdiv,.admindiv,.bookingdiv{
@@ -236,7 +271,7 @@ z-index: 3;
    
    width: 60rem;
     min-height: 40rem;
-    margin-top: 14%;
+    margin-top: 6%;
   
     
 
@@ -285,16 +320,25 @@ z-index: 3;
     
 
 }
-
+.describtion{
+    margin-top:1rem;
+    margin-bottom:1rem;
+    margin-bottom: 2rem;
+}
 .travelbook{
-   background-color: rgb(185, 162, 162);
+   background-color: rgb(255, 255, 255);
    color: rgb(19, 18, 18);
     
-    min-width: 20rem;
+    min-width: 25rem;
     min-height: 26rem;
     margin-top: 11%;
   display: grid;
+  box-shadow: 0 0.3rem 0.3rem black;
     
+
+}
+.travelbook h2{
+    color: grey;
 
 }
 
@@ -375,7 +419,7 @@ padding-right:2rem;
     text-shadow: rgb(16, 82, 73);
 }
 .headtext{
-    margin-top: 12rem;
+    margin-top: 8rem;
     text-align: center;
     margin-bottom:1rem;
 
@@ -408,8 +452,20 @@ padding-right:2rem;
 
 .loginform4{
     display: grid;
-   text-align: center;
+   text-transform: capitalize;
     width: 40%;
+}
+label,button{
+    text-transform: capitalize;
+}
+p{
+    text-transform: initial;
+}
+#loginclass textarea ,#loginclass input,#profileelement {
+    background-color: rgba(84, 204, 168, 0.493);
+    border-color: white;
+    border-radius:1rem;
+    padding: 10px;
 }
 
 
@@ -449,7 +505,7 @@ padding-right:2rem;
 }
 .loginform input{
     border-color: transparent;
-    height: 1.9rem;
+    height: 1rem;
     margin: 0.4rem;
     background-color: #dad2d2;
 }
@@ -538,6 +594,27 @@ border: none;}
        
         
     }
+
+    .blogdiv, .profilediv,.aboutdiv,.admindiv,.bookingdiv,.contactusdiv{
+     
+       
+       
+      
+     
+    
+    
+       
+       width: 50rem;
+        min-height: 40rem;
+        margin-top: 13%;
+      
+        
+    
+    }
+
+
+
+
     .logo{
         margin-top: 1rem;
         max-width: 20vh;
@@ -794,16 +871,12 @@ margin-top: 1rem;
    
 
     .headtext{
-        margin-top: 15%;
-        text-align: center;
+        margin-top: 16%;
+        
         font-size: 16px;
  
     
-        color: white;
-        border-radius: 1rem;
-        background-color: rgba(87, 84, 84, 0.801);
-        text-transform: capitalize;
-        text-shadow: rgb(16, 82, 73);
+        
     }
 
     .imagecard{
