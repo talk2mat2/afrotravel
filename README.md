@@ -2,7 +2,8 @@
 hosted link    https://afrotravel23.herokuapp.com/
 
 # built with :
-front-end: html/css/javascript
+front-end: html/css/javascript,
+
 back-end: node.js/mongodb
 
 
